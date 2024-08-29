@@ -1,9 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>MY Name</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แสดงชื่อ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .highlight {
+            color: #007BFF;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>ชื่อของคุณ: bopit chainok</h1>
+    <div class="container">
+        <h1 id="nameDisplay">ชื่อของคุณ: <span class="highlight">John Doe</span></h1>
+        <p>คลิกปุ่มด้านล่างเพื่อเปลี่ยนชื่อ</p>
+        <button onclick="changeName()">เปลี่ยนชื่อ</button>
+    </div>
+
+    <script>
+        function changeName() {
+            var newName = prompt("กรุณากรอกชื่อใหม่:");
+            if (newName) {
+                document.getElementById('nameDisplay').innerHTML = "ชื่อของคุณ: <span class='highlight'>" + newName + "</span>";
+            }
+        }
+    </script>
 </body>
 </html>
